@@ -1,0 +1,14 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="'navigation'" [mode]="'side'" [opened]="true">
+        <h1>Clínica Losacco</h1>
+        <mat-nav-list *ngFor="let item of navList">
+            <a class="sidenav-item-hover" mat-list-item matRipple href="{{ item.link }}">
+                <mat-icon mat-list-icon>{{ item.icon }}</mat-icon>
+                {{ item.label }}
+            </a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content class="page-div">
+        <ng-content></ng-content>
+    </mat-sidenav-content>
+</mat-sidenav-container>
